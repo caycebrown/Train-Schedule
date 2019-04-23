@@ -1,0 +1,8 @@
+.row, h3  {
+    justify-content: center;
+    align-content: center;
+    margin-right: 25vw;
+    margin-left: 25vw;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}

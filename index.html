@@ -29,29 +29,11 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>Thomas</td>
+                            <td>The Railyard</td>
+                            <td>30</td>
+                            <td>9:30 am</td>
+                            <td>30</td>
                           </tr>
 
                         </tbody>
@@ -64,32 +46,35 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Train Name</span>
                 </div>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="train-name">
             </div>
             <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Destination</span>
                     </div>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id="destination">
             </div>
             <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">First Train Time</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="(HH:mm - military time)">
+                    <input type="text" class="form-control" id="first-depart" placeholder="(HH:mm - military time)">
             </div>
             <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Frequency</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="(minutes)">
+                    <input type="text" class="form-control" id="frequency" placeholder="(minutes)">
             </div>
-            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-primary" id="submit">Submit</button>
 
         </div>
     </div>
 
-
-    <script src="/assets/script/app.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <script src="https://unpkg.com/moment"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/script/app.js"></script>
 </body>
 </html>
