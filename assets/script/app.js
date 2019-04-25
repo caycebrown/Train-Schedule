@@ -12,8 +12,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-var train , destination, frequency, departure, time, wait;
-
+var train , destination, frequency, departure, time, wait, firstTrain;
 
 
 
@@ -22,20 +21,19 @@ $('#submit').on('click', function(){
     destination = $('#destination').val();
     frequency = $('#frequency').val();
     departure = $('#first-depart').val();
+    firstTrain = $('#first-depart').val();
 
     time = moment().format('HH:mm');
-    console.log(time);
 
     while (JSON.stringify(departure) < JSON.stringify(time)){
         departure = moment(departure,'HH:mm').add(frequency, 'minutes').format('HH:mm');
-        console.log(departure);
         
     };
 
-    departure = moment(departure,'HH:mm').format('hh:mm');
-    console.log(departure);
-    wait = moment(time, 'hh:mm').diff(departure, 'm');
-    console.log(wait);
+    
+    time = moment(time, "HH:mm");
+    wait = moment(departure, 'HH:mm').diff(time, 'minutes');
+    departure = moment(departure,'HH:mm').format('hh:mm a');
 
 
 
@@ -43,7 +41,7 @@ $('#submit').on('click', function(){
         train: train,
         destination: destination,
         frequency: frequency,
-        departure: departure
+        departure: firstTrain
     });
 
     $('tbody').append(`
@@ -55,3 +53,32 @@ $('#submit').on('click', function(){
             <td>${wait}</td>
         </tr>`);
 });
+
+    database.ref().on('child_added', function(snapshot){
+        object = snapshot.val();
+        console.log(object.train);
+        
+            var time = moment().format('HH:mm');
+            var departure = object.departure;
+        
+            while (JSON.stringify(departure) < JSON.stringify(time)){
+                departure = moment(departure,'HH:mm').add(object.frequency, 'minutes').format('HH:mm');
+                
+            };
+        
+            
+            var time = moment(time, "HH:mm");
+            var wait = moment(departure, 'HH:mm').diff(time, 'minutes');
+            departure = moment(departure,'HH:mm').format('hh:mm a');
+        
+            $('tbody').append(`
+            <tr>
+                <td>${object.train}</td>
+                <td>${object.destination}</td>
+                <td>${object.frequency}</td>
+                <td>${departure}</td>
+                <td>${wait}</td>
+            </tr>`);
+            database.ref().off('child_added');
+        
+        });

@@ -1,8 +1,42 @@
-.row, h3  {
+body {
+    background-color: slategray;
+}
+
+
+#header {
+    margin-right: 15vw;
+    margin-left: 15vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+h3 {
+    margin: 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     justify-content: center;
     align-content: center;
-    margin-right: 25vw;
-    margin-left: 25vw;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    font-size: 3vw;
 }
+
+.row  {
+    justify-content: center;
+    align-content: center;
+    margin-right: 15vw;
+    margin-left: 15vw;
+    background-color: black;
+}
+
+td, th, h3 {
+    color: yellow;
+    font-family: 'VT323', monospace;
+    letter-spacing: 2px;
+
+}
+
+td, th {
+    font-size: 25px;
+}
+
