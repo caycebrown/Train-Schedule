@@ -8,18 +8,26 @@
     <!---Linking Bootstrap--->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--Linking Google Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quantico:400,700|Roboto:500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ewert" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sancreek" rel="stylesheet">
+
+
+
+
     <!--Custome stylesheet-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row" id="header">
+        <div class="row shadow-lg" id="header">
           <h3>Current Train Schedule</h3>
         </div>
         
         <div class="row" id="schedule">
-                <table class="table table-hover">
+                <table class="table table-borderless">
                         <thead>
                           <tr>
                             <th scope="col">Train Name</th>
@@ -31,10 +39,10 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td>Thomas</td>
-                            <td>The Trainyard</td>
-                            <td>30</td>
-                            <td>9:30 am</td>
+                            <td>Contention</td>
+                            <td>Yuma Prison</td>
+                            <td>Daily</td>
+                            <td>3:10 pm</td>
                             <td>Who Knows</td>
                           </tr>
 
@@ -45,31 +53,31 @@
         
         <div class="row" id="footer">
             <h3>Add Train</h3>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 shadow">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Train Name</span>
                 </div>
                 <input type="text" class="form-control" id="train-name">
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 shadow">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Destination</span>
                     </div>
                     <input type="text" class="form-control" id="destination">
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 shadow">
                     <div class="input-group-prepend">
                         <span class="input-group-text">First Train Time</span>
                     </div>
                     <input type="time" class="form-control" id="first-depart" placeholder="(HH:mm - military time)">
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 shadow">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Frequency</span>
                     </div>
                     <input type="number" class="form-control" id="frequency" placeholder="(minutes)">
             </div>
-            <button class="btn btn-primary" id="submit">Submit</button>
+            <button class="btn btn-danger shadow" id="submit">Submit</button>
 
         </div>
     </div>
